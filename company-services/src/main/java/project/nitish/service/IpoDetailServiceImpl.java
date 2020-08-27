@@ -1,5 +1,7 @@
 package project.nitish.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import project.nitish.dao.IpoDetailDao;
@@ -16,8 +18,8 @@ public class IpoDetailServiceImpl implements IpoDetailService {
 	}
 
 	@Override
-	public Iterable<IpoDetail> getIpoDetais() {
-		return ipoDetailDao.findAll();
+	public List<IpoDetail> getIpoDetails(String companyName) {
+		return ipoDetailDao.findByCompanyName(companyName);
 	}
 
 	@Override

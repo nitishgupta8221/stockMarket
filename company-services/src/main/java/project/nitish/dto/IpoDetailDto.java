@@ -1,30 +1,46 @@
 package project.nitish.dto;
 
+import project.nitish.model.Company;
+
 public class IpoDetailDto {
 	private Integer ipoId;
-	private String companyName;
 	private String stockExchange;
 	private Float pricePerShare;
 	private Integer noOfShares;
 	private String openingDate;
 	private String openingTime;
+	private String  companyName;
 
 	public IpoDetailDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public IpoDetailDto(Integer ipoId, String companyName, String stockExchange, Float pricePerShare,
-			Integer noOfShares, String openingDate, String openingTime) {
+	
+
+
+
+
+
+
+	public IpoDetailDto(Integer ipoId, String stockExchange, Float pricePerShare, Integer noOfShares,
+			String openingDate, String openingTime, String companyName) {
 		super();
 		this.ipoId = ipoId;
-		this.companyName = companyName;
 		this.stockExchange = stockExchange;
 		this.pricePerShare = pricePerShare;
 		this.noOfShares = noOfShares;
 		this.openingDate = openingDate;
 		this.openingTime = openingTime;
+		this.companyName = companyName;
 	}
+
+
+
+
+
+
+
 
 	public Integer getIpoId() {
 		return ipoId;
@@ -34,17 +50,36 @@ public class IpoDetailDto {
 		this.ipoId = ipoId;
 	}
 
+
+
+	public String getStockExchange() {
+		return stockExchange;
+	}
+
+
+
+
 	public String getCompanyName() {
 		return companyName;
 	}
+
+
+
+
+
+
+
 
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
 
-	public String getStockExchange() {
-		return stockExchange;
-	}
+
+
+
+
+
+
 
 	public void setStockExchange(String stockExchange) {
 		this.stockExchange = stockExchange;

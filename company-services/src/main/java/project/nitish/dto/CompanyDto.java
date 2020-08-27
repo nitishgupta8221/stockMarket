@@ -5,6 +5,10 @@ import java.util.List;
 
 import javax.persistence.ElementCollection;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import project.nitish.model.IpoDetail;
+
 public class CompanyDto {
 
 	private Integer companyId;
@@ -18,11 +22,18 @@ public class CompanyDto {
 	private String description;
 	@ElementCollection
 	private List<String> codeInStockExchange = new ArrayList<String>();
+	
+
 
 	public CompanyDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	
+
+
+
 
 	public CompanyDto(Integer companyId, String companyName, String ceo, String boardOfDirectors,
 			List<String> stockExchanges, Integer sector, String description, List<String> codeInStockExchange) {
@@ -36,6 +47,11 @@ public class CompanyDto {
 		this.description = description;
 		this.codeInStockExchange = codeInStockExchange;
 	}
+
+
+
+
+
 
 	public Integer getCompanyId() {
 		return companyId;
@@ -100,7 +116,8 @@ public class CompanyDto {
 	public void setCodeInStockExchange(List<String> codeInStockExchange) {
 		this.codeInStockExchange = codeInStockExchange;
 	}
-	
-	
+
+
+
 
 }

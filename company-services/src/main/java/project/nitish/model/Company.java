@@ -5,11 +5,17 @@ package project.nitish.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -31,12 +37,21 @@ public class Company{
     private String description;
     @ElementCollection
     private List<String> codeInStockExchange = new ArrayList<String>();
+    
 	
+    
     public Company() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
     
+
+
+
+	
+
+
+
 	public Company(Integer id, Integer companyId, String companyName, String ceo, String boardOfDirectors,
 			List<String> stockExchanges, Integer sector, String description, List<String> codeInStockExchange) {
 		super();
@@ -50,6 +65,13 @@ public class Company{
 		this.description = description;
 		this.codeInStockExchange = codeInStockExchange;
 	}
+
+
+
+
+
+
+
 
 	public Integer getId() {
 		return id;
@@ -122,10 +144,9 @@ public class Company{
 	public void setCodeInStockExchange(List<String> codeInStockExchange) {
 		this.codeInStockExchange = codeInStockExchange;
 	}
-	
-	
 
-	
+
+
 	
 	
 }
