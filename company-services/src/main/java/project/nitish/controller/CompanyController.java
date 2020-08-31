@@ -58,6 +58,14 @@ public class CompanyController {
 	}
 
 
+	@GetMapping("/companiesOfSector/{sectorId}")
+	public List<CompanyDto> seacrhSectorCompanies(@PathVariable("sectorId") Integer sector){
+		
+		return companyService.searchSectorCompanies(sector);
+	}
 	
-
+	@GetMapping("/companiesOfStock/{stockExchange}")
+	public List<CompanyDto> searchStockCompanies(@PathVariable("stockExchange") String stockExchange ){
+		return companyService.searchStockCompanies(stockExchange);
+	}
 }

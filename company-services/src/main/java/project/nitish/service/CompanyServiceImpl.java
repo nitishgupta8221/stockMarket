@@ -79,4 +79,24 @@ public class CompanyServiceImpl implements CompanyService {
         return postDtoList;
 		
 	}
+
+	@Override
+	public List<CompanyDto> searchSectorCompanies(Integer sector) {
+		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        Type listType = new TypeToken<List<CompanyDto>>(){}.getType();
+        List<CompanyDto> postDtoList = modelMapper.map(companyDao.findBySector(sector),listType);
+        return postDtoList;
+		
+		
+	}
+	
+	@Override
+	public List<CompanyDto> searchStockCompanies(String stockExchange){
+		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        Type listType = new TypeToken<List<CompanyDto>>(){}.getType();
+        List<CompanyDto> postDtoList = modelMapper.map(companyDao.findByStockExchanges(stockExchange),listType);
+        return postDtoList;
+		
+		
+	}
 }
